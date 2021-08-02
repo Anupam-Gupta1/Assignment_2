@@ -2,7 +2,7 @@
  * Program to check Selection_sort runtime analysis
  *
  * Compilation : gcc -o selection_sort selection_sort.c
- * Execution : ./Bubble_sort
+ * Execution : ./selection_sort
  *
  * Anupam Gupta and 1910990303  02/08/21
  * Assignment -> Assignment_2
@@ -75,7 +75,7 @@ void selection_sort(int arr[],int n){
     for(int i = 0; i < n-1; i++){
         
         check = 0;
-	min_index = 0;
+	min_index = i;
         
         for(int j = i+1; j < n; j++){
             
