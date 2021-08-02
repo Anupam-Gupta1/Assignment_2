@@ -84,9 +84,9 @@ void selection_sort(int arr[],int n){
 		min_index = j;
                 check = 1;
             }
-            swap(arr,min_index,i);
         }
         
+        swap(arr,min_index,i);
         // if swapped remains false it means array is already sorted
         if(!check)
             break;
@@ -96,9 +96,9 @@ void selection_sort(int arr[],int n){
 
 int main()
 {
-    int n = 8000;
+    int n;
     int type;
-    //scanf("%d", &n);
+    scanf("%d", &n);
     scanf("%d", &type);
     int arr[n];
 
