@@ -25,7 +25,7 @@ void input_value(int arr[],int n,int type){
         
         //Random Values
         for(int i = 0; i < n; i++){
-            arr[i] = rand() % n + 1;
+            arr[i] = rand() % n +1;
         }
         
     }
@@ -42,23 +42,15 @@ void input_value(int arr[],int n,int type){
     //Descending Values
     else if(type == 3) {
         
+	int k=n-1;
+
         for(int i = 0; i < n; i++){
-            arr[i] = n-i-1;
+            arr[i] = k;
+	    k--;
         }
         
     }
-    
-    
-}
-
-
-// Function to Swap two numbers
-void swap(int arr[],int i,int j){
-    int temp;
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    
+       
 }
 
 /*
@@ -69,12 +61,10 @@ void swap(int arr[],int i,int j){
 
 void selection_sort(int arr[],int n){
     
-    int check = 0;
     int min_index = 0;
-    
-    for(int i = 0; i < n-1; i++){
+
+    for(int i = 0; i < n; i++){
         
-        check = 0;
 	min_index = i;
         
         for(int j = i+1; j < n; j++){
@@ -82,14 +72,12 @@ void selection_sort(int arr[],int n){
             // checking minimum index
             if(arr[j] < arr[min_index]){
 		min_index = j;
-                check = 1;
             }
         }
-        
-        swap(arr,min_index,i);
-        // if swapped remains false it means array is already sorted
-        if(!check)
-            break;
+
+	int temp = arr[min_index];
+	arr[min_index] = arr[i];
+	arr[i] = temp;
     }
     
 }
